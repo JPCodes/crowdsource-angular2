@@ -1,5 +1,6 @@
 <h2>This project has id number: {{charitableId}}</h2>
-<button type="button"class="btn btn-warning">Edit</button>
+<button (click)="edit(charitableId)" type="button"class="btn btn-warning">Edit</button>
+<button (click)="delete(charitableId)" type="button"class="btn btn-danger">Delete</button>
 
 {{(charitable | async)?.name}}
 {{(charitable | async)?.title}}

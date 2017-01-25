@@ -21,8 +21,8 @@ export class NewComponent implements OnInit {
     this.submitted = false;
   }
 
-  submit(){
-    this.submitted = true;
+  toggleForm(){
+    this.submitted = !this.submitted;
   }
 
   newCrowdFund(){

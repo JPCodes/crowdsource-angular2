@@ -29,4 +29,7 @@ export class FireBaseDBService {
   getCrowdFundDetails(type:string, id:string){
     return this.projectDetails = this.af.database.object('/crowdFunding/'+type+'/' + id);
   }
+  delete(type:string,key:string){
+    eval('this.'+type).remove(key);
+  }
 }
