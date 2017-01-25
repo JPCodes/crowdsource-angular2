@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FireBaseDBService } from '../fire-base-db.service';
 
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
-  styleUrls: ['./new.component.css']
+  styleUrls: ['./new.component.css'],
+  providers: [FireBaseDBService]
 })
 export class NewComponent implements OnInit {
   name: string;
@@ -13,7 +15,7 @@ export class NewComponent implements OnInit {
   submitted: boolean;
   type;
 
-  constructor() { }
+  constructor(public fbs: FireBaseDBService) { }
 
   ngOnInit() {
     this.submitted = false;
@@ -24,8 +26,7 @@ export class NewComponent implements OnInit {
   }
 
   newCrowdFund(){
-
-    console.log(this.name, this.email, this.title, this.description, this.type)
+    this.fbs.newCrowdFund(this.name, this.email, this.title, this.description, this.type)
   }
 
 }
