@@ -12,10 +12,7 @@ export class FireBaseDBService {
     this.project = af.database.list('/crowdFunding/project');
     this.charitable = af.database.list('/crowdFunding/charitable');
  }
-
-
   newCrowdFund(name:string, email:string, title:string, description:string, type:string){
-    console.log(type)
         eval('this.'+type).push({
           name: name,
           email: email,
