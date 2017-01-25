@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let charitable of charitables | async">
-    {{charitable?.name}}
+  <li *ngFor="let charitable of charitables | async" (click)="goToDetailProject(charitable)">
+    <a>{{charitable.name}} - {{charitable.title}}</a>
   </li>
 </ul>

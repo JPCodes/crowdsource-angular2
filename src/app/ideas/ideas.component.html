@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let idea of ideas | async">
-    {{idea.name}}
+  <li *ngFor="let idea of ideas | async" (click)="goToDetailProject(idea)">
+    <a>{{idea.name}} - {{idea.title}}</a>
   </li>
 </ul>

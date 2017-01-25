@@ -6,6 +6,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { CharitableComponent } from './charitable/charitable.component';
 import { NewComponent } from './new/new.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { CharitableDetailsComponent } from './charitable-details/charitable-details.component';
+import { IdeaDetailsComponent } from './idea-details/idea-details.component';
 
 
 const appRoutes: Routes = [
@@ -28,6 +30,14 @@ const appRoutes: Routes = [
 {
   path: 'project/:id',
   component: ProjectDetailsComponent
+},
+{
+  path: 'idea/:id',
+  component: IdeaDetailsComponent
+},
+{
+  path: 'charitable/:id',
+  component: CharitableDetailsComponent
 }
 ];
 

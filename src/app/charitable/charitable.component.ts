@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FireBaseDBService } from '../fire-base-db.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,12 +13,15 @@ export class CharitableComponent implements OnInit {
 
 charitables: any;
 
-  constructor(public fbs: FireBaseDBService) { }
+  constructor(private router: Router, public fbs: FireBaseDBService) { }
 
   ngOnInit() {
 
     this.charitables = this.fbs.getCrowdFund("charitable")
   }
+  goToDetailProject(clickedProject) {
+      this.router.navigate(['charitable', clickedProject.$key]);
+    };
 
 
 }
