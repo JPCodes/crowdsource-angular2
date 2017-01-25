@@ -22,6 +22,16 @@ export class FireBaseDBService {
         })
 
     }
+  updateCrowdFund(name:string, email:string, title:string, description:string, type:string, key:string){
+    console.log("db update:", key, type)
+        eval('this.'+type).update(key,{
+          name: name,
+          email: email,
+          title: title,
+          description: description
+        })
+
+    }
 
   getCrowdFund(type:string){
     return eval('this.'+ type);
