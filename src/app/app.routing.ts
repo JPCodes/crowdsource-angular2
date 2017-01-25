@@ -5,6 +5,7 @@ import { IdeasComponent } from './ideas/ideas.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { CharitableComponent } from './charitable/charitable.component';
 import { NewComponent } from './new/new.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 
 
 const appRoutes: Routes = [
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
 },{
   path: 'charitable',
   component: CharitableComponent
+},
+{
+  path: 'project/:id',
+  component: ProjectDetailsComponent
 }
 ];
 

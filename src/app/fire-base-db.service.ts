@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 @Injectable()
 export class FireBaseDBService {
   idea: FirebaseListObservable<any>;
   project: FirebaseListObservable<any>;
   charitable: FirebaseListObservable<any>;
+  projectDetails: FirebaseObjectObservable<any>;
 
-  constructor(af: AngularFire) {
+  constructor(public af: AngularFire) {
     this.idea = af.database.list('/crowdFunding/idea');
     this.project = af.database.list('/crowdFunding/project');
     this.charitable = af.database.list('/crowdFunding/charitable');
@@ -24,5 +25,8 @@ export class FireBaseDBService {
 
   getCrowdFund(type:string){
     return eval('this.'+ type);
+  }
+  getCrowdFundDetails(type:string, id:string){
+    return this.projectDetails = this.af.database.object('/crowdFunding/'+type+'/' + id);
   }
 }

@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let project of projects | async">
-    {{project.name}}
+  <li *ngFor="let project of projects | async" (click)="goToDetailProject(project)">
+    <a>{{project.name}} - {{project.title}}</a>
   </li>
 </ul>
