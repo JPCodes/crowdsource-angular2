@@ -21,4 +21,8 @@ export class FireBaseDBService {
         })
 
     }
+
+  getCrowdFund(type:string){
+    return eval('this.'+ type);
+  }
 }

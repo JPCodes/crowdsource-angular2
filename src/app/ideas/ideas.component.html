@@ -1,3 +1,5 @@
-<p>
-  ideas works!
-</p>
+<ul>
+  <li *ngFor="let idea of ideas | async">
+    {{idea.name}}
+  </li>
+</ul>

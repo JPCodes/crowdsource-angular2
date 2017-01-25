@@ -1,3 +1,5 @@
-<p>
-  charitable works!
-</p>
+<ul>
+  <li *ngFor="let charitable of charitables | async">
+    {{charitable?.name}}
+  </li>
+</ul>
